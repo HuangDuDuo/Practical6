@@ -10,13 +10,15 @@ for i in range (1001):
     Infected.append(I)
     Susceptible.append(S)
     Recovered.append(R)
-    n1 = np.random.choice(range(2),S,p=[1-beta,beta])
+    prob = beta*I/N
+    n1 = np.random.choice(range(2),S,p=[1-prob,prob])
     In = np.sum(n1)
     n2 = np.random.choice(range(2),I,p=[1-gamma,gamma])
     Re = np.sum(n2)
     R = R+Re
     I = I+In-Re
     S = S-In
+plt.figure(figsize=(10, 6))
 plt.plot(Susceptible,label='Susceptible')
 plt.plot(Infected,label='Infected')
 plt.plot(Recovered,label='Recovered')
@@ -25,4 +27,3 @@ plt.xlabel('time')
 plt.ylabel('number of people')
 plt.legend()
 plt.show()
-

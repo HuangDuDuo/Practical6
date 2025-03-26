@@ -7,7 +7,7 @@ beta,gamma = 0.3,0.05
 near = [(-1,-1),(-1,0),(-1,1),(0,1),(0,-1),(1,-1),(1,0),(1,1)]
 for time in range(100):
     #print some points
-    if time in (0,10,50,99):
+    if time in (0,20,50,99):
         plt.figure(figsize=(6,4),dpi=150)
         plt.imshow(population,cmap='viridis',interpolation='nearest')
         plt.title('SIR model')
